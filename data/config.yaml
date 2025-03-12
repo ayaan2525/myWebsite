@@ -1,0 +1,34 @@
+name: "Ayaan Ahmad Siddiqui"
+email: "ayaan.siddiqui2525@gmail.com"
+linkedin: "https://www.linkedin.com/in/ayaan-ahmad-siddiqui-499a1113b/"
+github: "https://github.com/ayaan2525"
+location: "Germany"
+
+experience:
+  - role: "Work Student (DevOps)"
+    company: "ETAS (Bosch Group)"
+    duration: "04/2024 – present"
+    skills: ["GitHub Actions", "Terraform", "Azure", "Kubernetes", "CI/CD"]
+
+  - role: "Work Student (Python Developer)"
+    company: "Bosch"
+    duration: "09/2023 – 03/2024"
+    skills: ["Python", "Flask", "Dash", "Plotly"]
+
+education:
+  - degree: "Masters in Web and Data Science"
+    University: "University of Koblenz"
+    duration: "04/2023 – Current"
+
+skills:
+  - "Python"
+  - "Java"
+  - "CI/CD"
+  - "GitHub Actions"
+  - "Terraform"
+  - "Azure"
+
+certifications:
+  - name: "Microsoft: Azure Fundamentals"
+    link: "https://learn.microsoft.com/en-us/users/ayaanahmadsiddiqui-9512/credentials/26fbc0ea4091cf5d"
+
