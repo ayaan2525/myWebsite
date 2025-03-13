@@ -2,7 +2,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 # load yaml data
-with open("config.yaml", "r") as file:
+with open(".github/workflows/config.yaml", "r") as file:
     resume_data = yanl.safe_load(file)
 
 env = Environment(loader=FileSystemLoader("templates"))
