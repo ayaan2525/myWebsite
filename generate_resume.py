@@ -3,7 +3,7 @@ import os
 from jinja2 import Environment, FileSystemLoader
 
 # Load YAML Data
-with open("config.yaml", "r") as file:
+with open(".github/workflows/config.yaml", "r") as file:
     resume_data = yaml.safe_load(file)
 
 # Ensure the docs directory exists
@@ -22,3 +22,4 @@ with open(output_path, "w") as file:
     file.write(output)
 
 print(f"Resume successfully generated at {output_path}")
+
