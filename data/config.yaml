@@ -2,7 +2,7 @@ name: "Ayaan Ahmad Siddiqui"
 email: "ayaan.siddiqui2525@gmail.com"
 linkedin: "https://www.linkedin.com/in/ayaan-ahmad-siddiqui-499a1113b/"
 github: "https://github.com/ayaan2525"
-location: "Germany"
+location: "Koblenz, Germany"
 
 experience:
   - role: "Work Student (DevOps)"
@@ -17,7 +17,7 @@ experience:
 
 education:
   - degree: "Masters in Web and Data Science"
-    University: "University of Koblenz"
+    institution: "University of Koblenz"
     duration: "04/2023 – Current"
 
 skills:
