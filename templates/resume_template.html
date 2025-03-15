@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.name }} - Resume</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="assets/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ resume.name }} - Resume</title>
+  <!-- Link to external CSS and JS -->
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/script.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">{{ resume.name }}</h1>
-                <u1 class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    {% if resume.certifications %}
-                    <li><a href="#certifications">Certifications</a></li>
-                    {% endif %}
-                </u1>
-                <button id="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2>About</h2>
-                <p>Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a></p>
-                <p>Location: {{resume.location}}</p>
-                <p>LinkedIn: <a href="{{ resume.linkedin }}">{{ resume.linkedin }}</a></p>
-                <p>Github: <a href="{{ resume.github }}">{{ resume.github }}</a></p>
-            </div>
-        </section>
-    </main>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">{{ resume.name }}</h1>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          {% if resume.certifications %}
+          <li><a href="#certifications">Certifications</a></li>
+          {% endif %}
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a></p>
+        <p>Location: {{ resume.location }}</p>
+        <p>LinkedIn: <a href="{{ resume.linkedin }}">{{ resume.linkedin }}</a></p>
+        <p>GitHub: <a href="{{ resume.github }}">{{ resume.github }}</a></p>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        {% for job in resume.experience %}
+        <div class="card">
+          <h3>{{ job.role }}</h3>
+          <h4>{{ job.company }} <span class="duration">({{ job.duration }})</span></h4>
+          {% if job.skills %}
+          <p class="card-skills">Skills: {{ job.skills | join(', ') }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h2>Education</h2>
+        {% for edu in resume.education %}
+        <div class="card">
+          <h3>{{ edu.degree }}</h3>
+          <h4>{{ edu.institution }} <span class="duration">({{ edu.duration }})</span></h4>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          {% for skill in resume.skills %}
+          <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    {% if resume.certifications %}
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2>Certifications</h2>
+        {% for cert in resume.certifications %}
+        <div class="card">
+          <h3>{{ cert.name }}</h3>
+          <p><a href="{{ cert.link }}" target="_blank">View Credential</a></p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; {{ resume.name }} - All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
