@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ resume.name }} - Resume</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="assets/script.js"></script>
 </head>
 <body>
-    <h1>{{ resume.name }}</h1>
-    <p>Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a></p>
-    <p>LinkedIn: <a href="{{ resume.linkedin }}">{{ resume.linkedin }}</a></p>
-    <p>GitHub: <a href="{{ resume.github }}">{{ resume.github }}</a></p>
-    <h2>Experience</h2>
-    <ul>
-        {% for job in resume.experience %}
-            <li><strong>{{ job.role }}</strong> at {{ job.company }} ({{ job.duration }})</li>
-        {% endfor %}
-    </ul>
-    <h2>Skills</h2>
-    <ul>
-        {% for skill in resume.skills %}
-            <li>{{ skill }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">{{ resume.name }}</h1>
+                <u1 class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    {% if resume.certifications %}
+                    <li><a href="#certifications">Certifications</a></li>
+                    {% endif %}
+                </u1>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About</h2>
+                <p>Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a></p>
+                <p>Location: {{resume.location}}</p>
+                <p>LinkedIn: <a href="{{ resume.linkedin }}">{{ resume.linkedin }}</a></p>
+                <p>Github: <a href="{{ resume.github }}">{{ resume.github }}</a></p>
+            </div>
+        </section>
+    </main>
