@@ -2,7 +2,7 @@ import yaml
 import os
 
 # 1. Load the YAML data
-with open("config.yaml", "r", encoding="utf-8") as f:
+with open("data/config.yaml", "r", encoding="utf-8") as f:
     resume_data = yaml.safe_load(f)
 
 # 2. Construct the RST content
