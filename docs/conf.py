@@ -20,3 +20,8 @@ master_doc = "index"
 # -- Options for HTML output -------------------------------------------------
 html_theme = "furo"  # or "sphinx_rtd_theme"
 html_static_path = ["_static"]
+# docs/conf.py
+html_static_path = ["_static"]
+
+def setup(app):
+    app.add_css_file("custom.css")
