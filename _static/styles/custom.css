@@ -1,0 +1,12 @@
+/* Hide the main navigation sidebar, next/previous links, and footer for a more "resume" feel */
+
+.navbar, .sidebar, .footer, .navigation, .headerlink, .edit-this-page {
+    display: none !important;
+  }
+  
+  /* Optionally reduce content width to look more like a resume */
+  .main-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
