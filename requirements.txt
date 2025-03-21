@@ -1,5 +1,4 @@
-pyyaml
-jinja2
 sphinx
 furo
-pyyaml
+myst-parser
+

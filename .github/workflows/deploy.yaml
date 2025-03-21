@@ -1,8 +1,9 @@
-name: Build and Deploy Resume
+name: Build and Deploy sphinx website to gh-pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -22,16 +23,12 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate RST from YAML
-        run: |
-          python generate_resume.py
-
       - name: Build Sphinx HTML
         run: |
-          sphinx-build -b html docs docs/_build/html
+          sphinx-build -b html docs docs
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: docs/_build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
