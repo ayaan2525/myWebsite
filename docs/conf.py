@@ -1,27 +1,28 @@
-# docs/conf.py
-
 import os
 import sys
+sys.path.insert(0, os.path.abspath('.'))
 
-# -- Project information -----------------------------------------------------
-project = "My Resume"
-author = "Your Name"
-release = "1.0.0"
+# Project Information
 
-# -- General configuration ---------------------------------------------------
-extensions = []
+project = 'Ayaan Ahmad Siddiqui'
+author = 'Ayaan Ahmad Siddiqui'
+release = '0.1'
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
+extensions = [
+        'sphinx.ext.autodoc',
+        'sphinx.ext.napoleon',
+        'myst_parser',
+]
 
-# The master toctree document.
-master_doc = "index"
+templates_path = ['_templates']
+exclude_patterns = []
 
-# -- Options for HTML output -------------------------------------------------
-html_theme = "furo"  # or "sphinx_rtd_theme"
-html_static_path = ["_static"]
-# docs/conf.py
-html_static_path = ["_static"]
+html_theme = 'furo'
+html_static_path = ['_static']
 
-def setup(app):
-    app.add_css_file("custom.css")
+html_theme_options = {
+    "light_css_variables": {
+        "color-band-primary": "#0A8FDC",
+        "color-band-contant": "#0A8FDC",
+    },
+}
