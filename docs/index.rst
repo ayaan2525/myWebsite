@@ -9,4 +9,5 @@ Welcome to my personal website! I am Ayaan, a software engineer. This site highl
 
    about
    projects
+   system-design
    contact
